@@ -1,0 +1,28 @@
+<Window x:Class="PulseTracker.Dialogs.ExerciseDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Упражнение" Width="420" SizeToContent="Height"
+        Background="{DynamicResource BgRaisedBrush}" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <StackPanel Margin="24">
+        <TextBlock x:Name="TitleText" Text="Новое упражнение" FontSize="21" FontWeight="SemiBold" Margin="0,0,0,18" FontFamily="{StaticResource DisplayFontFamily}"/>
+
+        <TextBlock Text="Название" Style="{StaticResource LabelStyle}"/>
+        <TextBox x:Name="NameBox" Margin="0,0,0,14"/>
+
+        <TextBlock Text="Группа мышц" Style="{StaticResource LabelStyle}"/>
+        <TextBox x:Name="GroupBox" Margin="0,0,0,14"/>
+
+        <TextBlock Text="Тип нагрузки" Style="{StaticResource LabelStyle}"/>
+        <ComboBox x:Name="TypeCombo" Margin="0,0,0,4">
+            <ComboBoxItem Content="Силовое (подходы × повторы × вес)" Tag="Strength"/>
+            <ComboBoxItem Content="Кардио (время × дистанция)" Tag="Cardio"/>
+            <ComboBoxItem Content="На время (только длительность)" Tag="Time"/>
+        </ComboBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Отмена" Style="{StaticResource GhostButtonStyle}" Click="Cancel_Click" Margin="0,0,10,0"/>
+            <Button Content="Сохранить" Style="{StaticResource PrimaryButtonStyle}" Click="Save_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

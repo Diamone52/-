@@ -1,0 +1,87 @@
+<Window x:Class="PulseTracker.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Пульс — вход" Width="400" SizeToContent="Height"
+        Background="{DynamicResource BgBrush}" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" FontFamily="Segoe UI">
+    <Border Padding="34,32">
+        <StackPanel>
+            <TextBlock Text="Пульс" FontSize="30" FontWeight="Bold" Foreground="{DynamicResource AccentBrush}"
+                       FontFamily="{StaticResource DisplayFontFamily}" HorizontalAlignment="Center"/>
+            <TextBlock Text="трекер тренировок" FontSize="12" Foreground="{DynamicResource InkFaintBrush}"
+                       HorizontalAlignment="Center" Margin="0,2,0,26"/>
+
+            <!-- Переключатель Вход / Регистрация -->
+            <Border Background="{DynamicResource BgSunkenBrush}" CornerRadius="10" Padding="3" Margin="0,0,0,22">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="LoginModeBtn" Grid.Column="0" Content="Вход" GroupName="Mode"
+                                 Style="{StaticResource NavButtonStyle}" HorizontalContentAlignment="Center"
+                                 IsChecked="True" Checked="ModeChanged"/>
+                    <RadioButton x:Name="RegisterModeBtn" Grid.Column="1" Content="Регистрация" GroupName="Mode"
+                                 Style="{StaticResource NavButtonStyle}" HorizontalContentAlignment="Center"
+                                 Checked="ModeChanged"/>
+                </Grid>
+            </Border>
+
+            <TextBlock Text="ФИО" Style="{StaticResource LabelStyle}"/>
+            <TextBox x:Name="UsernameBox" Margin="0,0,0,14"/>
+
+            <StackPanel x:Name="EmailPanel" Visibility="Collapsed">
+                <TextBlock Text="Почта" Style="{StaticResource LabelStyle}"/>
+                <TextBox x:Name="EmailBox" Margin="0,0,0,4"/>
+                <TextBlock Text="Формат: имя@домен.точка-домен, например name.surname@mail.ru"
+                           FontSize="10.5" Foreground="{DynamicResource InkFaintBrush}" Margin="0,0,0,14" TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <TextBlock Text="Пароль" Style="{StaticResource LabelStyle}"/>
+            <PasswordBox x:Name="PasswordBox" Padding="9,8" Background="{DynamicResource BgSunkenBrush}"
+                         Foreground="{DynamicResource InkBrush}" BorderBrush="{DynamicResource LineBrush}"
+                         BorderThickness="1" FontSize="13.5" Margin="0,0,0,14" CaretBrush="{DynamicResource InkBrush}"/>
+
+            <StackPanel x:Name="ConfirmPanel" Visibility="Collapsed">
+                <TextBlock Text="Подтвердите пароль" Style="{StaticResource LabelStyle}"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Padding="9,8" Background="{DynamicResource BgSunkenBrush}"
+                             Foreground="{DynamicResource InkBrush}" BorderBrush="{DynamicResource LineBrush}"
+                             BorderThickness="1" FontSize="13.5" Margin="0,0,0,4" CaretBrush="{DynamicResource InkBrush}"/>
+
+                <TextBlock Text="Роль" Style="{StaticResource LabelStyle}" Margin="0,14,0,6"/>
+                <Border Background="{DynamicResource BgSunkenBrush}" CornerRadius="10" Padding="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="RoleUserBtn" Grid.Column="0" Content="Пользователь" GroupName="Role"
+                                     Style="{StaticResource NavButtonStyle}" HorizontalContentAlignment="Center"
+                                     IsChecked="True" Checked="RoleChanged"/>
+                        <RadioButton x:Name="RoleTrainerBtn" Grid.Column="1" Content="Тренер" GroupName="Role"
+                                     Style="{StaticResource NavButtonStyle}" HorizontalContentAlignment="Center"
+                                     Checked="RoleChanged"/>
+                    </Grid>
+                </Border>
+
+                <StackPanel x:Name="TrainerCodePanel" Visibility="Collapsed">
+                    <TextBlock Text="Код тренера" Style="{StaticResource LabelStyle}" Margin="0,14,0,6"/>
+                    <TextBox x:Name="TrainerCodeBox" Margin="0,0,0,4" MaxLength="4"/>
+                    <TextBlock Text="Регистрация тренером требует специальный 4-значный код (выдаётся отдельно)."
+                               FontSize="10.5" Foreground="{DynamicResource InkFaintBrush}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock x:Name="ErrorText" Foreground="{DynamicResource AccentBrush}" FontSize="12.5"
+                       TextWrapping="Wrap" Margin="0,10,0,0" Visibility="Collapsed"/>
+
+            <Button x:Name="SubmitBtn" Content="Войти" Style="{StaticResource PrimaryButtonStyle}"
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                    Margin="0,18,0,0" Padding="0,12" FontSize="14" Click="Submit_Click" IsDefault="True"/>
+
+            <TextBlock Text="Данные хранятся локально, в базе SQLite на этом компьютере."
+                       Foreground="{DynamicResource InkFaintBrush}" FontSize="10.5" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" Margin="0,18,0,0" TextAlignment="Center"/>
+        </StackPanel>
+    </Border>
+</Window>

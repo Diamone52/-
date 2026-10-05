@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ===================== Тёмная палитра (по умолчанию) ===================== -->
+    <SolidColorBrush x:Key="BgBrush" Color="#121210"/>
+    <SolidColorBrush x:Key="BgRaisedBrush" Color="#201F17"/>
+    <SolidColorBrush x:Key="BgSunkenBrush" Color="#0C0C07"/>
+    <SolidColorBrush x:Key="InkBrush" Color="#F1EEE3"/>
+    <SolidColorBrush x:Key="InkDimBrush" Color="#ACA890"/>
+    <SolidColorBrush x:Key="InkFaintBrush" Color="#7A7666"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="#D14820"/>
+    <SolidColorBrush x:Key="AccentInkBrush" Color="#FDEFE8"/>
+    <SolidColorBrush x:Key="AccentSoftBrush" Color="#3F241B"/>
+    <SolidColorBrush x:Key="AccentSoftInkBrush" Color="#FDEFE8"/>
+    <SolidColorBrush x:Key="GoodBrush" Color="#869762"/>
+    <SolidColorBrush x:Key="GoodSoftBrush" Color="#262D1D"/>
+    <SolidColorBrush x:Key="LineBrush" Color="#37362C"/>
+    <SolidColorBrush x:Key="LineSoftBrush" Color="#282720"/>
+
+</ResourceDictionary>

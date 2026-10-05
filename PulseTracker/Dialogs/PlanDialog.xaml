@@ -1,0 +1,33 @@
+<Window x:Class="PulseTracker.Dialogs.PlanDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="План тренировки" Width="560" SizeToContent="Height" MaxHeight="720"
+        Background="{DynamicResource BgRaisedBrush}" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <StackPanel Margin="24">
+        <TextBlock x:Name="TitleText" Text="Новый план" FontSize="21" FontWeight="SemiBold" Margin="0,0,0,18" FontFamily="{StaticResource DisplayFontFamily}"/>
+
+        <TextBlock Text="Название плана" Style="{StaticResource LabelStyle}"/>
+        <TextBox x:Name="NameBox" Margin="0,0,0,16"/>
+
+        <TextBlock Text="Упражнения плана" Style="{StaticResource LabelStyle}"/>
+        <ScrollViewer MaxHeight="360" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ItemsPanel"/>
+        </ScrollViewer>
+
+        <Grid Margin="0,12,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="AddExerciseCombo" Grid.Column="0" DisplayMemberPath="Name"/>
+            <Button x:Name="AddItemBtn" Grid.Column="2" Content="Добавить" Style="{StaticResource SmallButtonStyle}" Click="AddItem_Click"/>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Отмена" Style="{StaticResource GhostButtonStyle}" Click="Cancel_Click" Margin="0,0,10,0"/>
+            <Button Content="Сохранить план" Style="{StaticResource PrimaryButtonStyle}" Click="Save_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

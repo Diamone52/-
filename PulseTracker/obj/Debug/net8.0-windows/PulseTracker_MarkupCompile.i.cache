@@ -1,0 +1,20 @@
+﻿PulseTracker
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\isako\OneDrive\Рабочий стол\курсовая кабанов\PulseTracker\obj\Debug\net8.0-windows\
+PulseTracker
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\isako\OneDrive\Рабочий стол\курсовая кабанов\PulseTracker\App.xaml
+9-377581232
+
+1715774060
+214230066111
+Dialogs\AssignTrainingDialog.xaml;Dialogs\DayDialog.xaml;Dialogs\ExerciseDialog.xaml;Dialogs\PlanDialog.xaml;Dialogs\SessionDialog.xaml;LoginWindow.xaml;MainWindow.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
+
+False
+
